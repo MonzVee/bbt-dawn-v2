@@ -1484,6 +1484,12 @@
         "id": "bbt_wa_green",
         "label": "BBT WhatsApp Green",
         "default": "#25D366"
+      },
+      {
+        "type": "color",
+        "id": "bbt_flash_red",
+        "label": "BBT Flash Sale Red",
+        "default": "#E53935"
       }
     ]
   }

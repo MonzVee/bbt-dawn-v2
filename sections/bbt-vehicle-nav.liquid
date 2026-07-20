@@ -1,0 +1,240 @@
+{%- style -%}
+  .bbt-vehicle-nav {
+    background: var(--bbt-black);
+    padding: 3.5rem 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-vehicle-nav {
+      padding: 5rem 4rem;
+    }
+  }
+
+  .bbt-vehicle-nav__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .bbt-vehicle-nav__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .bbt-vehicle-nav__eyebrow {
+    display: block;
+    color: var(--bbt-gold);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 0.6rem;
+  }
+
+  .bbt-vehicle-nav__title {
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .bbt-vehicle-nav__see-all {
+    color: var(--bbt-gold);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .bbt-vehicle-nav__see-all:hover {
+    text-decoration: underline;
+  }
+
+  .bbt-vehicle-nav__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    .bbt-vehicle-nav__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .bbt-vehicle-nav__tile {
+    display: block;
+    background: var(--bbt-dark);
+    border: 1px solid #2a2a2a;
+    border-radius: var(--bbt-radius);
+    padding: 2rem;
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .bbt-vehicle-nav__tile:hover,
+  .bbt-vehicle-nav__tile:focus-visible {
+    border-color: var(--bbt-gold);
+    transform: translateY(-2px);
+  }
+
+  .bbt-vehicle-nav__tile-emoji {
+    display: block;
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+
+  .bbt-vehicle-nav__tile-title {
+    display: block;
+    color: #ffffff;
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .bbt-vehicle-nav__tile-subtext {
+    display: block;
+    color: var(--bbt-muted);
+    font-size: 1.4rem;
+  }
+{%- endstyle -%}
+
+<div class="bbt-vehicle-nav" id="bbt-vehicle-section">
+  <div class="bbt-vehicle-nav__inner">
+    <div class="bbt-vehicle-nav__header">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="bbt-vehicle-nav__eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+        <h2 class="bbt-vehicle-nav__title">{{ section.settings.title }}</h2>
+      </div>
+      {%- if section.settings.see_all_link != blank -%}
+        <a href="{{ section.settings.see_all_link }}" class="bbt-vehicle-nav__see-all">
+          {{ section.settings.see_all_label }} →
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="bbt-vehicle-nav__grid">
+      {%- for block in section.blocks -%}
+        <a href="{{ block.settings.link }}" class="bbt-vehicle-nav__tile" {{ block.shopify_attributes }}>
+          <span class="bbt-vehicle-nav__tile-emoji" aria-hidden="true">{{ block.settings.emoji }}</span>
+          <span class="bbt-vehicle-nav__tile-title">{{ block.settings.title }}</span>
+          <span class="bbt-vehicle-nav__tile-subtext">{{ block.settings.subtext }}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BBT Vehicle Nav",
+  "tag": "section",
+  "class": "section-bbt-vehicle-nav",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "FIND YOUR FIT"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop by Vehicle"
+    },
+    {
+      "type": "text",
+      "id": "see_all_label",
+      "label": "See all label",
+      "default": "See all"
+    },
+    {
+      "type": "text",
+      "id": "see_all_link",
+      "label": "See all link",
+      "default": "/collections/all"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Vehicle tile",
+      "settings": [
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Emoji",
+          "default": "🚐"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Taxi & Minibus"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "Quantum · NV350 · HiAce"
+        },
+        {
+          "type": "text",
+          "id": "link",
+          "label": "Link",
+          "default": "/collections/taxi-minibus"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT Vehicle Nav",
+      "blocks": [
+        {
+          "type": "tile",
+          "settings": {
+            "emoji": "🚐",
+            "title": "Taxi & Minibus",
+            "subtext": "Quantum · NV350 · HiAce",
+            "link": "/collections/taxi-minibus"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "emoji": "🚗",
+            "title": "7-Seater",
+            "subtext": "Avanza · Rumion · Ertiga",
+            "link": "/collections/7-seater"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "emoji": "🚙",
+            "title": "Passenger Cars",
+            "subtext": "Polo Vivo · Hilux · Swift",
+            "link": "/collections/passenger-cars"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "emoji": "🔧",
+            "title": "Workshop Trade",
+            "subtext": "Best prices · COD",
+            "link": "/pages/workshop-trade"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

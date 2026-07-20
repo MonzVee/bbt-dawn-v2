@@ -1,0 +1,392 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .bbt-flash-sale {
+    background: #1a0808;
+    border: 1px solid var(--bbt-flash-red);
+    border-radius: var(--bbt-radius);
+    margin: 2.5rem 1.5rem;
+    padding: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-flash-sale {
+      margin: 3.5rem auto;
+      max-width: 1100px;
+      padding: 3rem;
+    }
+  }
+
+  .bbt-flash-sale__badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bbt-flash-sale__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bbt-flash-red);
+    animation: bbt-pulse 1.4s ease-in-out infinite;
+  }
+
+  @keyframes bbt-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.4;
+      transform: scale(1.3);
+    }
+  }
+
+  .bbt-flash-sale__badge {
+    color: var(--bbt-flash-red);
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .bbt-flash-sale__body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-flash-sale__body {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .bbt-flash-sale__countdown {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .bbt-flash-sale__countdown-unit {
+    background: #240c0c;
+    border: 1px solid #3a1414;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    min-width: 60px;
+  }
+
+  .bbt-flash-sale__countdown-value {
+    display: block;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bbt-flash-sale__countdown-label {
+    display: block;
+    color: var(--bbt-muted);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .bbt-flash-sale__placeholder {
+    color: var(--bbt-cream);
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .bbt-flash-sale__product {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .bbt-flash-sale__image-wrap {
+    position: relative;
+    flex: 0 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bbt-dark);
+  }
+
+  .bbt-flash-sale__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bbt-flash-sale__save-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--bbt-flash-red);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-bottom-right-radius: 6px;
+  }
+
+  .bbt-flash-sale__info {
+    flex: 1 1 220px;
+  }
+
+  .bbt-flash-sale__name {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem;
+  }
+
+  .bbt-flash-sale__fitment {
+    color: var(--bbt-muted);
+    font-size: 1.3rem;
+    margin: 0 0 0.6rem;
+  }
+
+  .bbt-flash-sale__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+
+  .bbt-flash-sale__price {
+    color: var(--bbt-gold);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .bbt-flash-sale__compare {
+    color: var(--bbt-muted);
+    font-size: 1.4rem;
+    text-decoration: line-through;
+  }
+
+  .bbt-flash-sale__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1.1rem 2.2rem;
+    border-radius: var(--bbt-radius);
+    text-decoration: none;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign flash_product = null
+  assign flash_collection = collections['flash-sale']
+  if flash_collection and flash_collection.products.size > 0
+    assign flash_product = flash_collection.products.first
+  endif
+-%}
+
+<div class="bbt-flash-sale">
+  <div class="bbt-flash-sale__badge-row">
+    <span class="bbt-flash-sale__dot" aria-hidden="true"></span>
+    <span class="bbt-flash-sale__badge">{{ section.settings.badge_label }}</span>
+  </div>
+
+  <div class="bbt-flash-sale__body">
+    <div
+      class="bbt-flash-sale__countdown"
+      data-bbt-countdown
+      data-target-day="{{ section.settings.countdown_day }}"
+      data-target-hour="{{ section.settings.countdown_hour }}"
+      data-target-minute="{{ section.settings.countdown_minute }}"
+    >
+      <div class="bbt-flash-sale__countdown-unit">
+        <span class="bbt-flash-sale__countdown-value" data-bbt-days>00</span>
+        <span class="bbt-flash-sale__countdown-label">Days</span>
+      </div>
+      <div class="bbt-flash-sale__countdown-unit">
+        <span class="bbt-flash-sale__countdown-value" data-bbt-hours>00</span>
+        <span class="bbt-flash-sale__countdown-label">Hrs</span>
+      </div>
+      <div class="bbt-flash-sale__countdown-unit">
+        <span class="bbt-flash-sale__countdown-value" data-bbt-minutes>00</span>
+        <span class="bbt-flash-sale__countdown-label">Min</span>
+      </div>
+      <div class="bbt-flash-sale__countdown-unit">
+        <span class="bbt-flash-sale__countdown-value" data-bbt-seconds>00</span>
+        <span class="bbt-flash-sale__countdown-label">Sec</span>
+      </div>
+    </div>
+
+    {%- if flash_product -%}
+      <div class="bbt-flash-sale__product">
+        <div class="bbt-flash-sale__image-wrap">
+          {%- if flash_product.featured_media -%}
+            <img
+              src="{{ flash_product.featured_media | image_url: width: 200 }}"
+              alt="{{ flash_product.featured_media.alt | escape }}"
+              width="100"
+              height="100"
+              loading="lazy"
+            >
+          {%- endif -%}
+          {%- if flash_product.compare_at_price > flash_product.price -%}
+            {%- assign savings = flash_product.compare_at_price | minus: flash_product.price -%}
+            <span class="bbt-flash-sale__save-badge">Save {{ savings | money_without_trailing_zeros }}</span>
+          {%- endif -%}
+        </div>
+        <div class="bbt-flash-sale__info">
+          <p class="bbt-flash-sale__name">{{ flash_product.title }}</p>
+          {%- if section.settings.fitment_text != blank -%}
+            <p class="bbt-flash-sale__fitment">{{ section.settings.fitment_text }}</p>
+          {%- endif -%}
+          <div class="bbt-flash-sale__price-row">
+            <span class="bbt-flash-sale__price">{{ flash_product.price | money }}</span>
+            {%- if flash_product.compare_at_price > flash_product.price -%}
+              <span class="bbt-flash-sale__compare">{{ flash_product.compare_at_price | money }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+        <a href="{{ flash_product.url }}" class="bbt-flash-sale__cta">{{ section.settings.cta_label }} →</a>
+      </div>
+    {%- else -%}
+      <p class="bbt-flash-sale__placeholder">{{ section.settings.placeholder_text }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  (function () {
+    var el = document.currentScript.previousElementSibling.querySelector('[data-bbt-countdown]');
+    if (!el) return;
+
+    var targetDay = parseInt(el.getAttribute('data-target-day'), 10);
+    var targetHour = parseInt(el.getAttribute('data-target-hour'), 10);
+    var targetMinute = parseInt(el.getAttribute('data-target-minute'), 10);
+
+    var daysEl = el.querySelector('[data-bbt-days]');
+    var hoursEl = el.querySelector('[data-bbt-hours]');
+    var minutesEl = el.querySelector('[data-bbt-minutes]');
+    var secondsEl = el.querySelector('[data-bbt-seconds]');
+
+    function pad(n) {
+      return String(n).padStart(2, '0');
+    }
+
+    function nextTarget() {
+      var now = new Date();
+      var target = new Date(now);
+      var diffDays = (targetDay - now.getDay() + 7) % 7;
+      target.setDate(now.getDate() + diffDays);
+      target.setHours(targetHour, targetMinute, 0, 0);
+      if (target <= now) {
+        target.setDate(target.getDate() + 7);
+      }
+      return target;
+    }
+
+    var target = nextTarget();
+
+    function tick() {
+      var now = new Date();
+      var diff = target - now;
+      if (diff <= 0) {
+        target = nextTarget();
+        diff = target - now;
+      }
+      var days = Math.floor(diff / 86400000);
+      var hours = Math.floor((diff % 86400000) / 3600000);
+      var minutes = Math.floor((diff % 3600000) / 60000);
+      var seconds = Math.floor((diff % 60000) / 1000);
+
+      if (daysEl) daysEl.textContent = pad(days);
+      if (hoursEl) hoursEl.textContent = pad(hours);
+      if (minutesEl) minutesEl.textContent = pad(minutes);
+      if (secondsEl) secondsEl.textContent = pad(seconds);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "BBT Flash Sale",
+  "tag": "section",
+  "class": "section-bbt-flash-sale",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_label",
+      "label": "Badge label",
+      "default": "FLASH SALE"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_text",
+      "label": "Placeholder text (shown when no flash-sale product)",
+      "default": "New deal drops Friday 15:30"
+    },
+    {
+      "type": "text",
+      "id": "fitment_text",
+      "label": "Fitment subtext",
+      "default": "Fits most popular models — while stocks last"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "Grab the deal"
+    },
+    {
+      "type": "select",
+      "id": "countdown_day",
+      "label": "Countdown target day",
+      "options": [
+        { "value": "0", "label": "Sunday" },
+        { "value": "1", "label": "Monday" },
+        { "value": "2", "label": "Tuesday" },
+        { "value": "3", "label": "Wednesday" },
+        { "value": "4", "label": "Thursday" },
+        { "value": "5", "label": "Friday" },
+        { "value": "6", "label": "Saturday" }
+      ],
+      "default": "0"
+    },
+    {
+      "type": "range",
+      "id": "countdown_hour",
+      "label": "Countdown target hour (24h, store local time)",
+      "min": 0,
+      "max": 23,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "countdown_minute",
+      "label": "Countdown target minute",
+      "min": 0,
+      "max": 55,
+      "step": 5,
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT Flash Sale"
+    }
+  ]
+}
+{% endschema %}
