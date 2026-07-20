@@ -317,24 +317,24 @@
 
       @media screen and (max-width: 749px) {
         body {
-          padding-bottom: 60px;
+          padding-bottom: 70px;
         }
       }
 
       .bbt-mobile-nav {
         display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        background: var(--bbt-black);
+        border-top: 1px solid #2a2a2a;
       }
 
       @media screen and (max-width: 749px) {
         .bbt-mobile-nav {
-          display: flex;
-          position: fixed;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 100;
-          background: var(--bbt-black);
-          border-top: 1px solid #2a2a2a;
+          display: flex !important;
         }
       }
 
