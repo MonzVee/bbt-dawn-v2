@@ -313,6 +313,56 @@
           font-size: 1.6rem;
         }
       }
+
+      @media screen and (max-width: 749px) {
+        body {
+          padding-bottom: 60px;
+        }
+      }
+
+      .bbt-mobile-nav {
+        display: none;
+      }
+
+      @media screen and (max-width: 749px) {
+        .bbt-mobile-nav {
+          display: flex;
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 100;
+          background: var(--bbt-black);
+          border-top: 1px solid #2a2a2a;
+        }
+      }
+
+      .bbt-mobile-nav__item {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+        padding: 0.7rem 0.4rem 0.5rem;
+        color: #555555;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .bbt-mobile-nav__item svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .bbt-mobile-nav__item--active {
+        color: var(--bbt-gold);
+      }
+
+      .bbt-mobile-nav__item--whatsapp svg {
+        color: var(--bbt-wa);
+      }
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -380,6 +430,58 @@
     </main>
 
     {% sections 'footer-group' %}
+
+    <nav class="bbt-mobile-nav" aria-label="Mobile navigation">
+      <a
+        href="{{ routes.root_url }}"
+        class="bbt-mobile-nav__item{% if request.path == routes.root_url %} bbt-mobile-nav__item--active{% endif %}"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 11.5 12 4l9 7.5" />
+          <path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" />
+        </svg>
+        Home
+      </a>
+      <a
+        href="{{ routes.all_products_collection_url }}"
+        class="bbt-mobile-nav__item{% if request.path contains '/collections' %} bbt-mobile-nav__item--active{% endif %}"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3.5" y="3.5" width="7" height="7" rx="1" />
+          <rect x="13.5" y="3.5" width="7" height="7" rx="1" />
+          <rect x="3.5" y="13.5" width="7" height="7" rx="1" />
+          <rect x="13.5" y="13.5" width="7" height="7" rx="1" />
+        </svg>
+        Shop
+      </a>
+      <a href="/#bbt-flash-sale" class="bbt-mobile-nav__item">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />
+        </svg>
+        Deals
+      </a>
+      <a
+        href="https://wa.me/27635001740"
+        class="bbt-mobile-nav__item bbt-mobile-nav__item--whatsapp"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.32 2 11.66c0 1.86.52 3.6 1.43 5.09L2 22l5.46-1.39a10.4 10.4 0 0 0 4.54 1.05c5.52 0 10-4.32 10-9.66C22 6.32 17.52 2 12 2Zm0 17.55c-1.5 0-2.9-.4-4.1-1.1l-.3-.17-3.06.78.83-2.94-.2-.31a7.85 7.85 0 0 1-1.24-4.15c0-4.36 3.64-7.9 8.07-7.9 4.44 0 8.07 3.54 8.07 7.9s-3.63 7.9-8.07 7.9Z" />
+        </svg>
+        WhatsApp
+      </a>
+      <a
+        href="{{ routes.account_url }}"
+        class="bbt-mobile-nav__item{% if request.path contains '/account' %} bbt-mobile-nav__item--active{% endif %}"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="8" r="3.5" />
+          <path d="M4.5 20c1.4-3.6 4.4-5.5 7.5-5.5s6.1 1.9 7.5 5.5" />
+        </svg>
+        Account
+      </a>
+    </nav>
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
