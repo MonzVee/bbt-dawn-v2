@@ -3,7 +3,7 @@
 **Theme:** Dawn (bbt-dawn) | **Repo:** github.com/MonzVee/bbt-store
 **Last updated:** June 2026
 
----Yes commit pricing-audit.md to git. Also run git add -A and git status to confirm working tree is clean after commit.
+---
 
 ## 1. BUSINESS CONTEXT
 
