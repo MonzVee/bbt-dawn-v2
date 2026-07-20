@@ -16,6 +16,8 @@
   - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
   - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
   - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' (optional)
+  - show_bbt_initial_placeholder: {Boolean} Show a gold initial-letter box instead of no media when the product has no featured image. Default: false (optional)
+  - show_bbt_whatsapp_icon: {Boolean} Show a small WhatsApp icon button on the card linking to wa.me. Default: false (optional)
 
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
@@ -106,6 +108,10 @@
                   >
                 {%- endif -%}
               </div>
+            </div>
+          {%- elsif show_bbt_initial_placeholder -%}
+            <div class="card__media bbt-card-media-initial">
+              <span class="bbt-card-initial">{{ card_product.title | slice: 0, 1 | upcase }}</span>
             </div>
           {%- endif -%}
           <div class="card__content">
@@ -550,6 +556,17 @@
               </div>
             {% endif %}
           {% endif %}
+          {%- if show_bbt_whatsapp_icon -%}
+            <a
+              href="https://wa.me/27635001740"
+              class="bbt-card-wa-icon"
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp us about {{ card_product.title | escape }}"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.32 2 11.66c0 1.86.52 3.6 1.43 5.09L2 22l5.46-1.39a10.4 10.4 0 0 0 4.54 1.05c5.52 0 10-4.32 10-9.66C22 6.32 17.52 2 12 2Zm0 17.55c-1.5 0-2.9-.4-4.1-1.1l-.3-.17-3.06.78.83-2.94-.2-.31a7.85 7.85 0 0 1-1.24-4.15c0-4.36 3.64-7.9 8.07-7.9 4.44 0 8.07 3.54 8.07 7.9s-3.63 7.9-8.07 7.9Z"/></svg>
+            </a>
+          {%- endif -%}
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
               <span

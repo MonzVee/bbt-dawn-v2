@@ -34,6 +34,73 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  #ProductGridContainer .product-count,
+  #ProductGridContainer .product-count__text {
+    color: var(--bbt-muted);
+    font-size: 1.3rem;
+  }
+
+  #ProductGridContainer .card--card .card__inner,
+  #ProductGridContainer .card--standard .card__inner {
+    background: var(--bbt-dark);
+  }
+
+  #ProductGridContainer .card__heading a {
+    color: var(--bbt-cream);
+  }
+
+  #ProductGridContainer .price .price-item:not(s) {
+    color: var(--bbt-gold);
+    font-weight: 700;
+  }
+
+  #ProductGridContainer .price s.price-item {
+    color: var(--bbt-muted);
+  }
+
+  #ProductGridContainer .quick-add__submit {
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+    font-weight: 700;
+  }
+
+  #ProductGridContainer .bbt-card-media-initial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bbt-surface);
+  }
+
+  #ProductGridContainer .bbt-card-initial {
+    color: var(--bbt-gold);
+    font-size: 3.4rem;
+    font-weight: 700;
+  }
+
+  #ProductGridContainer .card__content {
+    position: relative;
+  }
+
+  #ProductGridContainer .bbt-card-wa-icon {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bbt-wa);
+    z-index: 2;
+  }
+
+  #ProductGridContainer .bbt-card-wa-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
 {%- endstyle -%}
 
 <collection-component
@@ -180,7 +247,9 @@
                       skip_styles: skip_card_product_styles,
                       quick_add: section.settings.quick_add,
                       section_id: section.id,
-                      product_view_context: 'collection'
+                      product_view_context: 'collection',
+                      show_bbt_initial_placeholder: true,
+                      show_bbt_whatsapp_icon: true
                     %}
                   </li>
                   {%- assign skip_card_product_styles = true -%}
