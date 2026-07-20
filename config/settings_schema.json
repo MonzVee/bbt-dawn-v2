@@ -1451,5 +1451,40 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "BBT Brand",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bbt_gold",
+        "label": "BBT Gold",
+        "default": "#F5C000"
+      },
+      {
+        "type": "color",
+        "id": "bbt_black",
+        "label": "BBT Black",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "bbt_dark",
+        "label": "BBT Dark",
+        "default": "#1D1D1D"
+      },
+      {
+        "type": "color",
+        "id": "bbt_cream",
+        "label": "BBT Cream",
+        "default": "#E8E0C8"
+      },
+      {
+        "type": "color",
+        "id": "bbt_wa_green",
+        "label": "BBT WhatsApp Green",
+        "default": "#25D366"
+      }
+    ]
   }
 ]

@@ -6,12 +6,12 @@
       "color_schemes": {
         "scheme-1": {
           "settings": {
-            "background": "#FFFFFF",
+            "background": "#111111",
             "background_gradient": "",
-            "text": "#121212",
-            "button": "#121212",
-            "button_label": "#FFFFFF",
-            "secondary_button_label": "#121212",
+            "text": "#E8E0C8",
+            "button": "#F5C000",
+            "button_label": "#111111",
+            "secondary_button_label": "#F5C000",
             "shadow": "#121212"
           }
         },

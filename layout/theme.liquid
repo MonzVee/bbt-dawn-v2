@@ -7,6 +7,32 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
+    <meta name="google-site-verification" content="nplCOZ8VDe2BoODUA4JFnoDZdsZL0LiVjm9bJzU3wfM">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoPartsStore",
+        "name": "Better Battery Tyres",
+        "url": "https://www.betterbattery.co.za",
+        "telephone": "063 500 1740",
+        "email": "hello@betterbattery.co.za",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "140 Modderfontein Road",
+          "addressLocality": "Tembisa",
+          "addressRegion": "Gauteng",
+          "postalCode": "1632",
+          "addressCountry": "ZA"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "24"
+        }
+      }
+    </script>
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -124,6 +150,16 @@
       }
 
       :root {
+        --bbt-gold: {{ settings.bbt_gold }};
+        --bbt-black: {{ settings.bbt_black }};
+        --bbt-dark: {{ settings.bbt_dark }};
+        --bbt-surface: #2A2A2A;
+        --bbt-cream: {{ settings.bbt_cream }};
+        --bbt-muted: #888888;
+        --bbt-wa: {{ settings.bbt_wa_green }};
+        --bbt-border: 1px solid #2A2A2A;
+        --bbt-radius: 10px;
+
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
