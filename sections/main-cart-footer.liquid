@@ -15,6 +15,57 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .cart__footer {
+    background: var(--bbt-dark);
+    border-radius: var(--bbt-radius);
+  }
+
+  .totals__total,
+  .totals__total-value {
+    color: #ffffff;
+  }
+
+  .totals__total-value {
+    color: var(--bbt-gold);
+    font-weight: 700;
+  }
+
+  .cart__checkout-button {
+    display: block;
+    width: 100%;
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+    font-weight: 700;
+  }
+
+  .bbt-cart-trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    justify-content: center;
+    margin: 1.4rem 0 0;
+    padding: 1rem;
+    background: var(--bbt-black);
+    border-radius: var(--bbt-radius-sm);
+    color: var(--bbt-muted);
+    font-size: 1.2rem;
+    list-style: none;
+  }
+
+  .bbt-cart-wa-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--bbt-wa);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .bbt-cart-wa-link:hover {
+    text-decoration: underline;
+  }
 {%- endstyle -%}
 
 <div
@@ -115,7 +166,7 @@
                   {% endif %}
                   form="cart"
                 >
-                  {{ 'sections.cart.checkout' | t }}
+                  Proceed to checkout
                 </button>
               </div>
 
@@ -124,6 +175,17 @@
                   {{ content_for_additional_checkout_buttons }}
                 </div>
               {%- endif -%}
+
+              <ul class="bbt-cart-trust-strip" role="list">
+                <li>🔒 Secure</li>
+                <li>💳 Peach Payments</li>
+                <li>↩️ Easy returns</li>
+                <li>📍 Free collect</li>
+              </ul>
+
+              <a href="https://wa.me/27635001740" target="_blank" rel="noopener" class="bbt-cart-wa-link">
+                Prefer WhatsApp? Order on 063 500 1740 →
+              </a>
           {%- endcase -%}
         {% endfor %}
 

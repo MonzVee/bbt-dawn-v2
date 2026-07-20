@@ -17,6 +17,39 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .title-wrapper-with-link .title--primary {
+    color: #ffffff;
+  }
+
+  .bbt-cart-count {
+    color: var(--bbt-muted);
+    font-weight: 400;
+  }
+
+  .bbt-cart-scrap-callout {
+    border-left: 4px solid var(--bbt-gold);
+    background: var(--bbt-dark);
+    color: var(--bbt-cream);
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .cart-items tr.cart-item {
+    background: var(--bbt-dark);
+  }
+
+  .cart-items .price,
+  .cart-items .cart-item__final-price {
+    color: var(--bbt-gold);
+    font-weight: 700;
+  }
+
+  .cart-items .cart-item__old-price {
+    color: var(--bbt-muted);
+  }
 {%- endstyle -%}
 
 {%- unless settings.cart_type == 'drawer' -%}
@@ -31,7 +64,12 @@
 >
   <div class="page-width">
     <div class="title-wrapper-with-link">
-      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      <h1 class="title title--primary">
+        {{ 'sections.cart.title' | t }}
+        {%- if cart != empty -%}
+          <span class="bbt-cart-count">({{ cart.item_count }})</span>
+        {%- endif -%}
+      </h1>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}
       </a>
@@ -54,6 +92,17 @@
     <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
         <div class="js-contents">
+          {%- assign bbt_cart_has_battery = false -%}
+          {%- for item in cart.items -%}
+            {%- if item.product.tags contains 'battery' -%}
+              {%- assign bbt_cart_has_battery = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if bbt_cart_has_battery -%}
+            <div class="bbt-cart-scrap-callout">
+              🔋 Battery in your cart? Bring your old battery when collecting to save R250–R475 at the counter.
+            </div>
+          {%- endif -%}
           {%- if cart != empty -%}
             <table class="cart-items">
               <caption class="visually-hidden">
