@@ -1,0 +1,285 @@
+{%- style -%}
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .bbt-hero {
+    background: var(--bbt-black);
+    padding: 4rem 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-hero {
+      padding: 6rem 4rem;
+    }
+  }
+
+  .bbt-hero__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .bbt-hero__eyebrow {
+    display: inline-block;
+    color: var(--bbt-gold);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem;
+  }
+
+  .bbt-hero__heading {
+    color: var(--bbt-cream);
+    font-size: 3.4rem;
+    line-height: 1.08;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-hero__heading {
+      font-size: 5.6rem;
+    }
+  }
+
+  .bbt-hero__heading .bbt-hero__gold {
+    color: var(--bbt-gold);
+  }
+
+  .bbt-hero__subtext {
+    color: var(--bbt-cream);
+    opacity: 0.85;
+    font-size: 1.7rem;
+    margin: 0 auto 2.5rem;
+    max-width: 560px;
+  }
+
+  .bbt-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .bbt-hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.4rem 2.6rem;
+    border-radius: var(--bbt-radius);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: transform 0.15s ease;
+  }
+
+  .bbt-hero__button:hover {
+    transform: translateY(-2px);
+  }
+
+  .bbt-hero__button--gold {
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+  }
+
+  .bbt-hero__button--whatsapp {
+    background: var(--bbt-wa);
+    color: #ffffff;
+  }
+
+  .bbt-hero__spin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    background: #1a1208;
+    border: 1px solid var(--bbt-gold);
+    border-radius: var(--bbt-radius);
+    padding: 1.4rem 1.8rem;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .bbt-hero__spin {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  .bbt-hero__spin-emoji {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .bbt-hero__spin-text {
+    color: var(--bbt-cream);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: left;
+    flex: 1 1 auto;
+    min-width: 180px;
+  }
+
+  .bbt-hero__spin-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 0.7rem 1.8rem;
+    border-radius: 999px;
+    text-decoration: none;
+    flex: 0 0 auto;
+  }
+{%- endstyle -%}
+
+<div class="bbt-hero color-{{ section.settings.color_scheme }}">
+  <div class="bbt-hero__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="bbt-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    <h1 class="bbt-hero__heading">
+      {{ section.settings.heading_line_1 }}<br>
+      {{ section.settings.heading_line_2 }} <span class="bbt-hero__gold">{{ section.settings.heading_gold_word }}</span>
+    </h1>
+
+    {%- if section.settings.subtext != blank -%}
+      <p class="bbt-hero__subtext">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+
+    <div class="bbt-hero__actions">
+      {%- if section.settings.button_1_label != blank -%}
+        <a href="{{ section.settings.button_1_link }}" class="bbt-hero__button bbt-hero__button--gold">
+          {{ section.settings.button_1_label }}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.button_2_label != blank -%}
+        <a
+          href="{{ section.settings.button_2_link }}"
+          class="bbt-hero__button bbt-hero__button--whatsapp"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ section.settings.button_2_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_spin_teaser -%}
+      <a href="{{ section.settings.spin_link }}" class="bbt-hero__spin">
+        <span class="bbt-hero__spin-emoji" aria-hidden="true">🎰</span>
+        <span class="bbt-hero__spin-text">{{ section.settings.spin_text }}</span>
+        <span class="bbt-hero__spin-pill">{{ section.settings.spin_button_label }}</span>
+      </a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BBT Hero",
+  "tag": "section",
+  "class": "section-bbt-hero",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "TEMBISA & MIDRAND — SAME-DAY FITMENT"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "Tyres. Batteries."
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "Combos."
+    },
+    {
+      "type": "text",
+      "id": "heading_gold_word",
+      "label": "Heading gold word",
+      "default": "Today."
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "In stock. Fitted same day. WhatsApp us in minutes."
+    },
+    {
+      "type": "text",
+      "id": "button_1_label",
+      "label": "Button 1 label",
+      "default": "Shop by Vehicle"
+    },
+    {
+      "type": "text",
+      "id": "button_1_link",
+      "label": "Button 1 link",
+      "info": "Internal anchor or path, e.g. #bbt-vehicle-section",
+      "default": "#bbt-vehicle-section"
+    },
+    {
+      "type": "text",
+      "id": "button_2_label",
+      "label": "Button 2 label",
+      "default": "WhatsApp Us"
+    },
+    {
+      "type": "text",
+      "id": "button_2_link",
+      "label": "Button 2 link",
+      "info": "External link, e.g. https://wa.me/27635001740",
+      "default": "https://wa.me/27635001740"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_spin_teaser",
+      "label": "Show Spin & Win teaser",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "spin_text",
+      "label": "Spin & Win text",
+      "default": "Spin & Win — get a discount on your first order"
+    },
+    {
+      "type": "text",
+      "id": "spin_button_label",
+      "label": "Spin button label",
+      "default": "Spin"
+    },
+    {
+      "type": "url",
+      "id": "spin_link",
+      "label": "Spin & Win link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT Hero"
+    }
+  ]
+}
+{% endschema %}

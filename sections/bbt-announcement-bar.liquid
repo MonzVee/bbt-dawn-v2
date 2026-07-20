@@ -1,0 +1,116 @@
+{%- style -%}
+  .bbt-ticker {
+    background: var(--bbt-gold);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .bbt-ticker__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .bbt-ticker__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: bbt-ticker-scroll {{ section.settings.speed_seconds }}s linear infinite;
+  }
+
+  .bbt-ticker:hover .bbt-ticker__track,
+  .bbt-ticker:focus-within .bbt-ticker__track {
+    animation-play-state: paused;
+  }
+
+  .bbt-ticker__item {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 2.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--bbt-black);
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-ticker__item {
+      font-size: 1.4rem;
+    }
+  }
+
+  @keyframes bbt-ticker-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bbt-ticker__track {
+      animation: none;
+    }
+  }
+{%- endstyle -%}
+
+<div class="bbt-ticker" role="region" aria-label="{{ 'sections.header.announcement' | t }}">
+  <div class="bbt-ticker__viewport">
+    <div class="bbt-ticker__track">
+      {%- for i in (1..2) -%}
+        {%- for block in section.blocks -%}
+          <div class="bbt-ticker__item" {% if i == 1 %}{{ block.shopify_attributes }}{% endif %} {% if i == 2 %}aria-hidden="true"{% endif %}>
+            {{ block.settings.message }}
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BBT Announcement Bar",
+  "tag": "section",
+  "class": "section-bbt-announcement-bar",
+  "settings": [
+    {
+      "type": "range",
+      "id": "speed_seconds",
+      "label": "Ticker speed (seconds per loop)",
+      "min": 15,
+      "max": 60,
+      "step": 1,
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Message",
+          "default": "🔋 Quantum Rim & Tyre Combos from R7,800"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT Announcement Bar",
+      "blocks": [
+        { "type": "message", "settings": { "message": "🔋 Quantum Rim & Tyre Combos from R7,800" } },
+        { "type": "message", "settings": { "message": "📍 Tembisa & Midrand — same-day fitment" } },
+        { "type": "message", "settings": { "message": "💬 WhatsApp 063 500 1740 — we reply in minutes" } },
+        { "type": "message", "settings": { "message": "✅ Osaka & Exide batteries — always in stock" } },
+        { "type": "message", "settings": { "message": "⭐ Five-star rated on Google" } },
+        { "type": "message", "settings": { "message": "🚚 Nationwide delivery on accessories & oils" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
