@@ -3,29 +3,43 @@
   "type": "header",
   "sections": {
     "announcement-bar": {
-      "type": "announcement-bar",
+      "type": "bbt-announcement-bar",
       "settings": {
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "speed_seconds": 30
       },
       "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "text_alignment": "center",
-            "color_scheme": "scheme-1",
-            "link": ""
-          }
+        "message-1": {
+          "type": "message",
+          "settings": { "message": "🔋 Quantum Rim & Tyre Combos from R7,800" }
+        },
+        "message-2": {
+          "type": "message",
+          "settings": { "message": "📍 Tembisa & Midrand — same-day fitment" }
+        },
+        "message-3": {
+          "type": "message",
+          "settings": { "message": "💬 WhatsApp 063 500 1740 — we reply in minutes" }
+        },
+        "message-4": {
+          "type": "message",
+          "settings": { "message": "✅ Osaka & Exide batteries — always in stock" }
+        },
+        "message-5": {
+          "type": "message",
+          "settings": { "message": "⭐ Five-star rated on Google" }
+        },
+        "message-6": {
+          "type": "message",
+          "settings": { "message": "🚚 Nationwide delivery on accessories & oils" }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "message-1",
+        "message-2",
+        "message-3",
+        "message-4",
+        "message-5",
+        "message-6"
       ]
     },
     "header": {

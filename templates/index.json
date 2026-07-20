@@ -1,75 +1,147 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "bbt_hero": {
+      "type": "bbt-hero",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "eyebrow": "TEMBISA & MIDRAND — SAME-DAY FITMENT",
+        "heading_line_1": "Tyres. Batteries.",
+        "heading_line_2": "Combos.",
+        "heading_gold_word": "Today.",
+        "subtext": "In stock. Fitted same day. WhatsApp us in minutes.",
+        "button_1_label": "Shop by Vehicle",
+        "button_1_link": "#bbt-vehicle-section",
+        "button_2_label": "WhatsApp Us",
+        "button_2_link": "https://wa.me/27635001740",
+        "show_spin_teaser": true,
+        "spin_text": "Spin & Win — get a discount on your first order",
+        "spin_button_label": "Spin",
+        "spin_link": ""
+      }
+    },
+    "bbt_vehicle_nav": {
+      "type": "bbt-vehicle-nav",
+      "settings": {
+        "eyebrow": "FIND YOUR FIT",
+        "title": "Shop by Vehicle",
+        "see_all_label": "See all",
+        "see_all_link": "/collections/all"
+      },
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "tile-1": {
+          "type": "tile",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "emoji": "🚐",
+            "title": "Taxi & Minibus",
+            "subtext": "Quantum · NV350 · HiAce",
+            "link": "/collections/taxi-minibus"
           }
         },
-        "button": {
-          "type": "buttons",
+        "tile-2": {
+          "type": "tile",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "emoji": "🚗",
+            "title": "7-Seater",
+            "subtext": "Avanza · Rumion · Ertiga",
+            "link": "/collections/7-seater"
+          }
+        },
+        "tile-3": {
+          "type": "tile",
+          "settings": {
+            "emoji": "🚙",
+            "title": "Passenger Cars",
+            "subtext": "Polo Vivo · Hilux · Swift",
+            "link": "/collections/passenger-cars"
+          }
+        },
+        "tile-4": {
+          "type": "tile",
+          "settings": {
+            "emoji": "🔧",
+            "title": "Workshop Trade",
+            "subtext": "Best prices · COD",
+            "link": "/pages/workshop-trade"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["tile-1", "tile-2", "tile-3", "tile-4"]
+    },
+    "bbt_flash_sale": {
+      "type": "bbt-flash-sale",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "badge_label": "FLASH SALE",
+        "placeholder_text": "New deal drops Friday 15:30",
+        "fitment_text": "Fits most popular models — while stocks last",
+        "cta_label": "Grab the deal",
+        "countdown_day": "0",
+        "countdown_hour": 17,
+        "countdown_minute": 30
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "bbt_accessories_scroll": {
+      "type": "bbt-accessories-scroll",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "eyebrow": "GEAR UP",
+        "title": "Car Accessories",
+        "view_all_label": "View all",
+        "view_all_link": "/collections/car-accessories",
+        "footer_label": "Browse all accessories — nationwide delivery",
+        "footer_link": "/collections/car-accessories"
+      }
+    },
+    "bbt_reviews": {
+      "type": "bbt-reviews",
+      "settings": {
+        "eyebrow": "WHAT CUSTOMERS SAY",
+        "title": "Google Reviews",
+        "rating_count_text": "24+ Five-Star Reviews",
+        "footer_label": "Read all reviews on Google",
+        "footer_link": "https://g.page/r/CURQ3dL5N-RjEBM/review"
+      },
+      "blocks": {
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "quote": "Got my Quantum combo fitted here — rims look amazing. Fast service, in and out in under an hour. Will definitely be back!",
+            "reviewer_name": "Thabo M.",
+            "reviewer_meta": "Google Review · Verified Customer"
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "quote": "Best prices on batteries in Tembisa. Brought my old battery, got my discount at the counter. Honest and fast. Highly recommended.",
+            "reviewer_name": "Nomsa K.",
+            "reviewer_meta": "Google Review · Verified Customer"
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "quote": "Bought tyres and rims combo. Price was right, fitment was quick. Staff were helpful and professional. Will send all my drivers here.",
+            "reviewer_name": "Sipho D.",
+            "reviewer_meta": "Google Review · Verified Customer"
+          }
+        }
+      },
+      "block_order": ["review-1", "review-2", "review-3"]
+    },
+    "bbt_whatsapp_cta": {
+      "type": "bbt-whatsapp-cta",
+      "settings": {
+        "title": "Chat to order on WhatsApp",
+        "subtitle": "063 500 1740 · Reply in minutes",
+        "whatsapp_link": "https://wa.me/27635001740"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "bbt_hero",
+    "bbt_vehicle_nav",
+    "bbt_flash_sale",
+    "bbt_accessories_scroll",
+    "bbt_reviews",
+    "bbt_whatsapp_cta"
   ]
 }
