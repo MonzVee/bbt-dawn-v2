@@ -79,6 +79,21 @@
         "countdown_minute": 30
       }
     },
+    "bbt_hot_combos": {
+      "type": "bbt-hot-combos",
+      "settings": {
+        "eyebrow": "BEST SELLERS",
+        "title": "Hot Combos",
+        "view_all_label": "View all combos",
+        "view_all_link": "/collections/combos",
+        "fitment_badge_label": "INCLUDES FITMENT",
+        "card_link_label": "View combo",
+        "whatsapp_link": "https://wa.me/27635001740",
+        "banner_text": "All combos include professional fitment at our Tembisa store. WhatsApp us to book your slot.",
+        "banner_cta_label": "Book fitment",
+        "banner_link": "https://wa.me/27635001740"
+      }
+    },
     "bbt_accessories_scroll": {
       "type": "bbt-accessories-scroll",
       "settings": {
@@ -140,6 +155,7 @@
     "bbt_hero",
     "bbt_vehicle_nav",
     "bbt_flash_sale",
+    "bbt_hot_combos",
     "bbt_accessories_scroll",
     "bbt_reviews",
     "bbt_whatsapp_cta"

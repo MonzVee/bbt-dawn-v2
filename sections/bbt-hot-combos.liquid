@@ -1,0 +1,378 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .bbt-hot-combos {
+    background: var(--bbt-black);
+    padding: 3.5rem 0;
+  }
+
+  .bbt-hot-combos__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 1.5rem 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-hot-combos__header {
+      margin: 0 4rem 2rem;
+    }
+  }
+
+  .bbt-hot-combos__eyebrow {
+    display: block;
+    color: var(--bbt-gold);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 0.6rem;
+  }
+
+  .bbt-hot-combos__title {
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .bbt-hot-combos__view-all {
+    color: var(--bbt-gold);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .bbt-hot-combos__view-all:hover {
+    text-decoration: underline;
+  }
+
+  .bbt-hot-combos__rail {
+    display: flex;
+    gap: 1.2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 1.5rem 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-hot-combos__rail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow-x: visible;
+      padding: 0 4rem 1rem;
+    }
+  }
+
+  .bbt-hot-combos__card {
+    flex: 0 0 auto;
+    width: 280px;
+    scroll-snap-align: start;
+    background: var(--bbt-dark);
+    border: 1px solid #2a2a2a;
+    border-radius: var(--bbt-radius);
+    overflow: hidden;
+    transition: border-color 0.15s ease;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-hot-combos__card {
+      width: auto;
+    }
+  }
+
+  .bbt-hot-combos__card:hover {
+    border-color: var(--bbt-gold);
+  }
+
+  .bbt-hot-combos__card-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: var(--bbt-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .bbt-hot-combos__card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bbt-hot-combos__card-emoji {
+    font-size: 4.2rem;
+    line-height: 1;
+  }
+
+  .bbt-hot-combos__fitment-badge {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--bbt-radius-sm);
+  }
+
+  .bbt-hot-combos__card-body {
+    padding: 1.4rem;
+  }
+
+  .bbt-hot-combos__card-name {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 0.7rem;
+  }
+
+  .bbt-hot-combos__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin: 0 0 1.2rem;
+  }
+
+  .bbt-hot-combos__price {
+    color: var(--bbt-gold);
+    font-size: 1.9rem;
+    font-weight: 700;
+  }
+
+  .bbt-hot-combos__compare {
+    color: var(--bbt-muted);
+    font-size: 1.4rem;
+    text-decoration: line-through;
+  }
+
+  .bbt-hot-combos__card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .bbt-hot-combos__card-link {
+    color: var(--bbt-gold);
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+
+  .bbt-hot-combos__card-link:hover {
+    text-decoration: underline;
+  }
+
+  .bbt-hot-combos__wa-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--bbt-wa);
+    flex: 0 0 auto;
+  }
+
+  .bbt-hot-combos__wa-button svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+  }
+
+  .bbt-hot-combos__banner {
+    margin: 2.5rem 1.5rem 0;
+    background: var(--bbt-dark);
+    border: 1px solid #2a2a2a;
+    border-radius: var(--bbt-radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    align-items: flex-start;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-hot-combos__banner {
+      margin: 2.5rem 4rem 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .bbt-hot-combos__banner-text {
+    color: var(--bbt-cream);
+    font-size: 1.5rem;
+    margin: 0;
+    max-width: 520px;
+  }
+
+  .bbt-hot-combos__banner-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1.1rem 2.2rem;
+    border-radius: var(--bbt-radius);
+    text-decoration: none;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+{%- endstyle -%}
+
+{%- assign combos_collection = collections['combos'] -%}
+
+<div class="bbt-hot-combos">
+  <div class="bbt-hot-combos__header">
+    <div>
+      <span class="bbt-hot-combos__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="bbt-hot-combos__title">{{ section.settings.title }}</h2>
+    </div>
+    {%- if section.settings.view_all_link != blank -%}
+      <a href="{{ section.settings.view_all_link }}" class="bbt-hot-combos__view-all">
+        {{ section.settings.view_all_label }} →
+      </a>
+    {%- endif -%}
+  </div>
+
+  {%- if combos_collection and combos_collection.products.size > 0 -%}
+    <div class="bbt-hot-combos__rail">
+      {%- for product in combos_collection.products limit: 4 -%}
+        <div class="bbt-hot-combos__card">
+          <div class="bbt-hot-combos__card-image-wrap">
+            {%- if product.featured_media -%}
+              <img
+                src="{{ product.featured_media | image_url: width: 560 }}"
+                alt="{{ product.featured_media.alt | escape }}"
+                width="280"
+                height="210"
+                loading="lazy"
+              >
+            {%- else -%}
+              <span class="bbt-hot-combos__card-emoji" aria-hidden="true">🚗</span>
+            {%- endif -%}
+            <span class="bbt-hot-combos__fitment-badge">{{ section.settings.fitment_badge_label }}</span>
+          </div>
+          <div class="bbt-hot-combos__card-body">
+            <p class="bbt-hot-combos__card-name">{{ product.title }}</p>
+            <div class="bbt-hot-combos__price-row">
+              <span class="bbt-hot-combos__price">{{ product.price | money }}</span>
+              {%- if product.compare_at_price > product.price -%}
+                <span class="bbt-hot-combos__compare">{{ product.compare_at_price | money }}</span>
+              {%- endif -%}
+            </div>
+            <div class="bbt-hot-combos__card-footer">
+              <a href="{{ product.url }}" class="bbt-hot-combos__card-link">{{ section.settings.card_link_label }} →</a>
+              <a
+                href="{{ section.settings.whatsapp_link }}"
+                class="bbt-hot-combos__wa-button"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp us about {{ product.title }}"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C6.48 2 2 6.32 2 11.66c0 1.86.52 3.6 1.43 5.09L2 22l5.46-1.39a10.4 10.4 0 0 0 4.54 1.05c5.52 0 10-4.32 10-9.66C22 6.32 17.52 2 12 2Zm0 17.55c-1.5 0-2.9-.4-4.1-1.1l-.3-.17-3.06.78.83-2.94-.2-.31a7.85 7.85 0 0 1-1.24-4.15c0-4.36 3.64-7.9 8.07-7.9 4.44 0 8.07 3.54 8.07 7.9s-3.63 7.9-8.07 7.9Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  <div class="bbt-hot-combos__banner">
+    <p class="bbt-hot-combos__banner-text">{{ section.settings.banner_text }}</p>
+    <a href="{{ section.settings.banner_link }}" class="bbt-hot-combos__banner-cta" target="_blank" rel="noopener">
+      {{ section.settings.banner_cta_label }} →
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BBT Hot Combos",
+  "tag": "section",
+  "class": "section-bbt-hot-combos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "BEST SELLERS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Hot Combos"
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View all label",
+      "default": "View all combos"
+    },
+    {
+      "type": "text",
+      "id": "view_all_link",
+      "label": "View all link",
+      "default": "/collections/combos"
+    },
+    {
+      "type": "text",
+      "id": "fitment_badge_label",
+      "label": "Fitment badge label",
+      "default": "INCLUDES FITMENT"
+    },
+    {
+      "type": "text",
+      "id": "card_link_label",
+      "label": "Card link label",
+      "default": "View combo"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_link",
+      "label": "WhatsApp link",
+      "default": "https://wa.me/27635001740"
+    },
+    {
+      "type": "text",
+      "id": "banner_text",
+      "label": "Banner text",
+      "default": "All combos include professional fitment at our Tembisa store. WhatsApp us to book your slot."
+    },
+    {
+      "type": "text",
+      "id": "banner_cta_label",
+      "label": "Banner button label",
+      "default": "Book fitment"
+    },
+    {
+      "type": "text",
+      "id": "banner_link",
+      "label": "Banner button link",
+      "default": "https://wa.me/27635001740"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT Hot Combos"
+    }
+  ]
+}
+{% endschema %}
