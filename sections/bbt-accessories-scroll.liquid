@@ -1,0 +1,273 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .bbt-accessories {
+    background: var(--bbt-black);
+    padding: 3.5rem 0;
+  }
+
+  .bbt-accessories__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 1.5rem 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-accessories__header {
+      margin: 0 4rem 2rem;
+    }
+  }
+
+  .bbt-accessories__eyebrow {
+    display: block;
+    color: var(--bbt-gold);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 0.6rem;
+  }
+
+  .bbt-accessories__title {
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .bbt-accessories__view-all {
+    color: var(--bbt-gold);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .bbt-accessories__view-all:hover {
+    text-decoration: underline;
+  }
+
+  .bbt-accessories__rail-wrap {
+    position: relative;
+  }
+
+  .bbt-accessories__rail-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    background: linear-gradient(to right, transparent, var(--bbt-black));
+    pointer-events: none;
+  }
+
+  .bbt-accessories__rail {
+    display: flex;
+    gap: 1.2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 1.5rem 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media screen and (min-width: 750px) {
+    .bbt-accessories__rail {
+      padding: 0 4rem 1rem;
+    }
+  }
+
+  .bbt-accessories__card {
+    flex: 0 0 auto;
+    width: 190px;
+    scroll-snap-align: start;
+    background: var(--bbt-dark);
+    border: 1px solid #2a2a2a;
+    border-radius: var(--bbt-radius);
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+  }
+
+  .bbt-accessories__card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--bbt-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .bbt-accessories__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bbt-accessories__card-initial {
+    color: var(--bbt-gold);
+    font-size: 3.4rem;
+    font-weight: 700;
+  }
+
+  .bbt-accessories__card-body {
+    padding: 1.2rem;
+  }
+
+  .bbt-accessories__card-name {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .bbt-accessories__card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .bbt-accessories__card-price {
+    color: var(--bbt-gold);
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .bbt-accessories__card-compare {
+    color: var(--bbt-muted);
+    font-size: 1.2rem;
+    text-decoration: line-through;
+  }
+
+  .bbt-accessories__footer {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .bbt-accessories__footer a {
+    color: var(--bbt-gold);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .bbt-accessories__footer a:hover {
+    text-decoration: underline;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign accessories_collection = collections['car-accessories']
+  assign accessories_products = accessories_collection.products | slice: 0, 8
+-%}
+
+<div class="bbt-accessories">
+  <div class="bbt-accessories__header">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="bbt-accessories__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="bbt-accessories__title">{{ section.settings.title }}</h2>
+    </div>
+    {%- if section.settings.view_all_link != blank -%}
+      <a href="{{ section.settings.view_all_link }}" class="bbt-accessories__view-all">
+        {{ section.settings.view_all_label }} →
+      </a>
+    {%- endif -%}
+  </div>
+
+  <div class="bbt-accessories__rail-wrap">
+    <div class="bbt-accessories__rail">
+      {%- for product in accessories_products -%}
+        <a href="{{ product.url }}" class="bbt-accessories__card">
+          <div class="bbt-accessories__card-image">
+            {%- if product.featured_media -%}
+              <img
+                src="{{ product.featured_media | image_url: width: 380 }}"
+                alt="{{ product.featured_media.alt | escape }}"
+                width="190"
+                height="190"
+                loading="lazy"
+              >
+            {%- else -%}
+              <span class="bbt-accessories__card-initial">{{ product.title | slice: 0, 1 | upcase }}</span>
+            {%- endif -%}
+          </div>
+          <div class="bbt-accessories__card-body">
+            <p class="bbt-accessories__card-name">{{ product.title }}</p>
+            <div class="bbt-accessories__card-price-row">
+              <span class="bbt-accessories__card-price">{{ product.price | money }}</span>
+              {%- if product.compare_at_price > product.price -%}
+                <span class="bbt-accessories__card-compare">{{ product.compare_at_price | money }}</span>
+              {%- endif -%}
+            </div>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- if section.settings.footer_link != blank -%}
+    <div class="bbt-accessories__footer">
+      <a href="{{ section.settings.footer_link }}">{{ section.settings.footer_label }} →</a>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "BBT Accessories Scroll",
+  "tag": "section",
+  "class": "section-bbt-accessories-scroll",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "GEAR UP"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Car Accessories"
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View all label",
+      "default": "View all"
+    },
+    {
+      "type": "text",
+      "id": "view_all_link",
+      "label": "View all link",
+      "default": "/collections/car-accessories"
+    },
+    {
+      "type": "text",
+      "id": "footer_label",
+      "label": "Footer link label",
+      "default": "Browse all accessories — nationwide delivery"
+    },
+    {
+      "type": "text",
+      "id": "footer_link",
+      "label": "Footer link",
+      "default": "/collections/car-accessories"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT Accessories Scroll"
+    }
+  ]
+}
+{% endschema %}
