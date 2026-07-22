@@ -51,10 +51,15 @@
       color: var(--bbt-muted);
     }
 
-    #MainProduct-{{ section.id }} .product-form__submit.button--primary {
+    #MainProduct-{{ section.id }} .product-form__submit {
       background: var(--bbt-gold);
       color: var(--bbt-black);
       font-weight: 700;
+      width: 100%;
+    }
+
+    #MainProduct-{{ section.id }} .shopify-payment-button {
+      display: none;
     }
 
     #MainProduct-{{ section.id }} .product-form__input--pill input[type='radio']:checked + label {
@@ -607,7 +612,12 @@
                     show_pickup_availability: true
                   -%}
 
-                  <a href="https://wa.me/27635001740" target="_blank" rel="noopener" class="bbt-product-wa-cta">
+                  <a
+                    href="{% render 'bbt-whatsapp-cta-url', product: product, variant: product.selected_or_first_available_variant %}"
+                    target="_blank"
+                    rel="noopener"
+                    class="bbt-product-wa-cta"
+                  >
                     Prefer WhatsApp? Order on 063 500 1740
                   </a>
 
@@ -883,7 +893,12 @@
   </product-component>
 </product-info>
 
-<a href="https://wa.me/27635001740" target="_blank" rel="noopener" class="bbt-product-wa-sticky">
+<a
+  href="{% render 'bbt-whatsapp-cta-url', product: product, variant: product.selected_or_first_available_variant %}"
+  target="_blank"
+  rel="noopener"
+  class="bbt-product-wa-sticky"
+>
   Not sure which size? Ask us · 063 500 1740 · We reply in minutes
 </a>
 

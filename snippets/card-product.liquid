@@ -558,7 +558,7 @@
           {% endif %}
           {%- if show_bbt_whatsapp_icon -%}
             <a
-              href="https://wa.me/27635001740"
+              href="{% render 'bbt-whatsapp-cta-url', product: card_product %}"
               class="bbt-card-wa-icon"
               target="_blank"
               rel="noopener"

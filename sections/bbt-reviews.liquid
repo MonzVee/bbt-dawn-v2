@@ -9,16 +9,6 @@
     margin: 0 1.5rem 2rem;
   }
 
-  .bbt-reviews__eyebrow {
-    display: block;
-    color: var(--bbt-gold);
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin: 0 0 0.6rem;
-  }
-
   .bbt-reviews__title {
     color: #ffffff;
     font-size: 2.6rem;
@@ -137,9 +127,6 @@
 
 <div class="bbt-reviews">
   <div class="bbt-reviews__header">
-    {%- if section.settings.eyebrow != blank -%}
-      <span class="bbt-reviews__eyebrow">{{ section.settings.eyebrow }}</span>
-    {%- endif -%}
     <h2 class="bbt-reviews__title">{{ section.settings.title }}</h2>
     <div class="bbt-reviews__rating">
       <span class="bbt-reviews__stars" aria-hidden="true">★★★★★</span>
@@ -180,22 +167,16 @@
   "settings": [
     {
       "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "WHAT CUSTOMERS SAY"
-    },
-    {
-      "type": "text",
       "id": "title",
       "label": "Title",
-      "default": "Google Reviews"
+      "default": "What Customers Say"
     },
     {
       "type": "text",
       "id": "rating_count_text",
-      "label": "Rating count text",
-      "info": "Update manually when Muneer advises a new review count",
-      "default": "24+ Five-Star Reviews"
+      "label": "Rating label text",
+      "info": "No review count — Google review count is not displayed on-site",
+      "default": "Google Reviews"
     },
     {
       "type": "text",

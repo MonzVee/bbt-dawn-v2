@@ -1,0 +1,18 @@
+{%- comment -%}
+  Renders a wa.me link pre-filled with product (and optional variant) info.
+  Accepts:
+  - product: {Object} product object (required)
+  - variant: {Object} variant object (optional) — appended as " - variant.title"
+    unless product.has_only_default_variant is true
+  - phone: {String} phone number, defaults to 27635001740
+{%- endcomment -%}
+{%- liquid
+  assign wa_phone = phone | default: '27635001740'
+  assign wa_message = "Hi BBT, I'm interested in: " | append: product.title
+  if variant != blank and product.has_only_default_variant == false
+    assign wa_message = wa_message | append: ' - ' | append: variant.title
+  endif
+  assign wa_message_encoded = wa_message | url_encode
+  assign wa_url = 'https://wa.me/' | append: wa_phone | append: '?text=' | append: wa_message_encoded
+-%}
+{{- wa_url -}}

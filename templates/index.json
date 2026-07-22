@@ -108,9 +108,8 @@
     "bbt_reviews": {
       "type": "bbt-reviews",
       "settings": {
-        "eyebrow": "WHAT CUSTOMERS SAY",
-        "title": "Google Reviews",
-        "rating_count_text": "24+ Five-Star Reviews",
+        "title": "What Customers Say",
+        "rating_count_text": "Google Reviews",
         "footer_label": "Read all reviews on Google",
         "footer_link": "https://g.page/r/CURQ3dL5N-RjEBM/review"
       },

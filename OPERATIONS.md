@@ -38,8 +38,10 @@ average order value.
 - List prices HIGHER where market allows — accessories
   and LEDs have no price anchor in customers minds.
   Price confidently.
-- Use Spin & Win, flash sales, and free delivery as
+- Use Spin & Win and flash sales as
   the discount mechanism — never reduce list prices directly.
+  Free delivery is never offered on any category (see §10) —
+  use vouchers and flash sales instead.
 - Batteries and tyres have known market prices —
   price competitively but never below GP floor.
 - Always check Takealot and AutoZone before setting
@@ -104,11 +106,14 @@ Close the sale. "Ends tonight" urgency.
 ### Spin & Win prize pool
 - R50 voucher: 40% probability
 - 10% off accessories: 35% probability
-- Free delivery on accessories/oils only: 20% probability
+- R100 delivery-fee voucher (accessories/oils only): 20% probability
 - R200 grand prize voucher: 5% probability
 - Never give battery discounts as prizes
-- Free delivery prizes apply to accessories and oils ONLY
-  not batteries, tyres, or combos
+- Never give free delivery as a prize on any category —
+  the R100 delivery-fee voucher above is a discount code,
+  not a shipping profile change
+- Delivery-fee voucher prizes apply to accessories and oils
+  ONLY, not batteries, tyres, or combos
 - Voucher codes: single use, 7-day expiry
 
 ### Loyalty tiers — calibrated to BBT customer spend
@@ -286,6 +291,17 @@ Ask Claude Code every Monday morning:
 
 ## 10. ESCALATION RULES
 
+### Current shipping policy (updated for launch — see CLAUDE.md §5 for the full profile table)
+- Batteries: R100 flat fee, local and nationwide
+- Tyres: R100 per tyre, local and nationwide
+- Combos: R600 flat fee via Pudo, nationwide
+- Accessories & Oils: R100 flat fee on ALL orders, no threshold
+- Free delivery does not exist on any category — click &
+  collect remains free everywhere
+- This is the confirmed policy as of launch. Any further
+  change to these rates or profiles still requires asking
+  first, per the rule below.
+
 ### Claude Code must always ask before:
 - Changing any price below GP floor
 - Creating any battery discount of any kind
@@ -295,8 +311,8 @@ Ask Claude Code every Monday morning:
 
 ### Claude Code must never:
 - Discount batteries under any circumstances ever
-- Offer free delivery on batteries, tyres, or combos
-  as a prize, loyalty benefit, or promotion
+- Offer free delivery as a prize, loyalty benefit, or
+  promotion on any category
 - Change shipping profiles without confirmation
 - Delete any products or collections
 - Publish theme changes without Muneer approval

@@ -128,7 +128,7 @@ Scrap deposit: R475 — discount code TRADE475 applied at counter on collection
 **IMPORTANT — Exide 668:** Confirm SMF or AGM technology with supplier before publishing.
 Start-stop vehicles require AGM. Wrong technology = returns.
 
-**Battery shipping profile:** Click & collect FREE | Local delivery 10km radius R80 | No nationwide delivery.
+**Battery shipping profile:** Click & collect FREE | R100 flat fee — local AND nationwide, no free delivery.
 
 **Scrap deposit mechanic (Option C):**
 All battery prices shown WITH trade-in (deposit included in price).
@@ -138,7 +138,7 @@ Product description must include: "Price includes scrap deposit. Bring your old 
 
 ### 4B. Tyres
 
-**Shipping profile:** Click & collect FREE | Per-tyre delivery fee R80 local / R120 nationwide
+**Shipping profile:** Click & collect FREE | R100 per tyre — local and nationwide
 
 #### 185/70/14 Tyre — status: active
 Tags: tyre, 7-seater, 7-seater-tyre, avanza, rumion, ertiga, 185-70-14
@@ -187,7 +187,7 @@ One parent product, size as variant — per tyre
 | 205/40/17 | R1,100 | Low-profile 17-inch |
 | 215/45/17 | R1,250 | Low-profile 17-inch |
 
-### 4C. Rim + Tyre Combos (Click & collect ONLY — fitment included)
+### 4C. Rim + Tyre Combos (R600 flat fee via Pudo nationwide, or free click & collect — fitment included)
 
 #### Quantum Rim + Tyre Combo — status: active
 Tags: combo, taxi-combo, quantum, np350, hiace, 195-14c
@@ -228,7 +228,7 @@ One parent, vehicle fitment as variant. Part number in variant label.
 
 ### 4E. Oils & Fluids — status: active
 Tags: engine-oil, oil, lubricant + brand tag
-Shipping: nationwide, free over R500
+Shipping: R100 flat fee on all orders, nationwide — no free delivery threshold
 
 | Product | Variant | Price |
 |---------|---------|-------|
@@ -247,7 +247,7 @@ Includes: engine oil + oil filter + air filter | Fitment: Suzuki Ertiga 1.5 all 
 - Toyota Hilux 2.8 GD6 Service Kit — R950
 
 ### 4G. Car Accessories — all status: active
-Tags: accessory + specific tag | Shipping: free over R500, R80 below
+Tags: accessory + specific tag | Shipping: R100 flat fee on all orders — no free delivery threshold
 
 | Product | Price | Tags |
 |---------|-------|------|
@@ -285,14 +285,16 @@ Tags: accessory, led, lighting, headlight
 
 ---
 
-## 5. SHIPPING PROFILES (3 required)
+## 5. SHIPPING PROFILES (4 required)
+
+**Effective for launch — updated shipping policy (no free delivery on any category):**
 
 | Profile name | Assigned to | Rates |
 |-------------|------------|-------|
-| Batteries | Osaka, Exide products | Click & collect FREE · Local 10km R80 · No nationwide |
-| Tyres | All tyre products | Click & collect FREE · Local R80/tyre · Nationwide R120/tyre |
-| Combos — Collect Only | Quantum combo, 7-Seater combo | Click & collect FREE only — no delivery |
-| Accessories & Oils | Everything else | Click & collect FREE · Under R500: R80 · Over R500: FREE |
+| Batteries | Osaka, Exide products | Click & collect FREE · R100 flat — local and nationwide |
+| Tyres | All tyre products | Click & collect FREE · R100/tyre — local and nationwide |
+| Combos — Pudo + Collect | Quantum combo, 7-Seater combo | Click & collect FREE · R600 flat via Pudo — nationwide |
+| Accessories & Oils | Everything else | Click & collect FREE · R100 flat on ALL orders — no free-delivery threshold |
 
 ---
 

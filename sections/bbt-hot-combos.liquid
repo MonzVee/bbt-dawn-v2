@@ -277,7 +277,7 @@
             <div class="bbt-hot-combos__card-footer">
               <a href="{{ product.url }}" class="bbt-hot-combos__card-link">{{ section.settings.card_link_label }} →</a>
               <a
-                href="{{ section.settings.whatsapp_link }}"
+                href="{% render 'bbt-whatsapp-cta-url', product: product %}"
                 class="bbt-hot-combos__wa-button"
                 target="_blank"
                 rel="noopener"
@@ -343,12 +343,6 @@
       "id": "card_link_label",
       "label": "Card link label",
       "default": "View combo"
-    },
-    {
-      "type": "text",
-      "id": "whatsapp_link",
-      "label": "WhatsApp link",
-      "default": "https://wa.me/27635001740"
     },
     {
       "type": "text",

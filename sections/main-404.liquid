@@ -1,6 +1,18 @@
 <style type="text/css">
+  .template-404 {
+    background: var(--bbt-black);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .template-404 .title {
+    color: var(--bbt-gold);
+    font-weight: 700;
+  }
+
   .template-404 .title + * {
     margin-top: 1rem;
+    color: var(--bbt-cream);
   }
 
   @media screen and (min-width: 750px) {
@@ -8,16 +20,47 @@
       margin-top: 2rem;
     }
   }
+
+  .template-404__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    max-width: 32rem;
+    margin: 2.4rem auto 0;
+  }
+
+  .template-404__button--gold {
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+    font-weight: 700;
+  }
+
+  .template-404__button--wa {
+    display: block;
+    text-align: center;
+    padding: 1.3rem 1.5rem;
+    border: 2px solid var(--bbt-wa);
+    border-radius: var(--bbt-radius);
+    color: var(--bbt-wa);
+    font-weight: 700;
+    text-decoration: none;
+  }
 </style>
 
 <div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
   <h1 class="title">
     {{ 'templates.404.title' | t }}
   </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+  <p>
+    {{ 'templates.404.subtext' | t }}
+  </p>
+  <div class="template-404__actions">
+    <a href="{{ routes.all_products_collection_url }}" class="button template-404__button--gold">
+      Back to shop
+    </a>
+    <a href="https://wa.me/27635001740" target="_blank" rel="noopener" class="template-404__button--wa">
+      WhatsApp us
+    </a>
+  </div>
 </div>
