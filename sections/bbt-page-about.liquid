@@ -1,0 +1,65 @@
+{%- style -%}
+  .bbt-page-about {
+    background: var(--bbt-black);
+    padding: 3rem 0 4rem;
+  }
+
+  .bbt-page-about__body {
+    max-width: 68rem;
+    margin: 0 auto;
+    color: var(--bbt-cream);
+    font-size: 1.6rem;
+    line-height: 1.7;
+  }
+
+  .bbt-page-about__body p {
+    margin: 0 0 1.6rem;
+  }
+
+  .bbt-page-about__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .bbt-page-about__wa-strip {
+    display: block;
+    margin: 3rem auto 0;
+    max-width: 68rem;
+    text-align: center;
+    padding: 1.4rem 1.5rem;
+    background: var(--bbt-wa);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: var(--bbt-radius);
+    text-decoration: none;
+  }
+{%- endstyle -%}
+
+<div class="bbt-page-about page-width">
+  <div class="bbt-page-about__body rte">
+    {{ section.settings.body }}
+  </div>
+  <a href="https://wa.me/27635001740" class="bbt-page-about__wa-strip" target="_blank" rel="noopener">
+    WhatsApp us on 063 500 1740 — we reply in minutes
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "BBT About Body",
+  "tag": "section",
+  "class": "section-bbt-page-about",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body content",
+      "default": "<p>Better Battery Tyres (BBT) is Tembisa and Midrand's trusted fitment centre for car batteries, tyres, rim combos and car accessories.</p><p>Founded by Muneer Variawa, BBT has built a reputation for honest pricing, fast service and same-day fitment. With 25+ five-star Google reviews, we're proud to be the go-to automotive fitment centre for taxi operators, Uber and Bolt drivers, and passenger car owners across Gauteng.</p><p>We stock Osaka and Exide Eco batteries, a full range of passenger and commercial tyres, rim and tyre combos for 7-seaters and taxis, NGK spark plugs, engine oils, service kits, and a growing range of car accessories shipped nationwide.</p><p>Visit us at 140 Modderfontein Road, Tembisa.<br>WhatsApp: 063 500 1740<br>Mon–Sat: 8am–5:30pm</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT About Body"
+    }
+  ]
+}
+{% endschema %}

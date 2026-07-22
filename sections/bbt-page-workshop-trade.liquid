@@ -1,0 +1,66 @@
+{%- style -%}
+  .bbt-page-workshop {
+    background: var(--bbt-black);
+    padding: 3rem 0 4rem;
+  }
+
+  .bbt-page-workshop__body {
+    max-width: 68rem;
+    margin: 0 auto;
+    color: var(--bbt-cream);
+    font-size: 1.6rem;
+    line-height: 1.7;
+  }
+
+  .bbt-page-workshop__body ul {
+    margin: 0 0 1.6rem;
+    padding-left: 2rem;
+  }
+
+  .bbt-page-workshop__body li {
+    margin-bottom: 0.6rem;
+  }
+
+  .bbt-page-workshop__wa-strip {
+    display: block;
+    margin: 3rem auto 0;
+    max-width: 68rem;
+    text-align: center;
+    padding: 1.4rem 1.5rem;
+    background: var(--bbt-wa);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: var(--bbt-radius);
+    text-decoration: none;
+  }
+{%- endstyle -%}
+
+<div class="bbt-page-workshop page-width">
+  <div class="bbt-page-workshop__body rte">
+    {{ section.settings.body }}
+  </div>
+  <a href="https://wa.me/27635001740" class="bbt-page-workshop__wa-strip" target="_blank" rel="noopener">
+    WhatsApp us on 063 500 1740 — best trade prices, COD only
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "BBT Workshop Trade",
+  "tag": "section",
+  "class": "section-bbt-page-workshop",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body content",
+      "default": "<p>Best market prices for workshops and mechanics — batteries, tyres and consumables.</p><ul><li>Cash on delivery only — no accounts, no credit, no 30-day terms</li><li>Best trade prices in Tembisa and Midrand</li><li>WhatsApp is our primary contact for trade orders</li></ul><p>WhatsApp us on 063 500 1740 to get a trade quote.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT Workshop Trade"
+    }
+  ]
+}
+{% endschema %}

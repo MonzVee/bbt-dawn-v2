@@ -1,0 +1,67 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "faq": {
+      "type": "bbt-page-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "How do I order online?",
+            "answer": "<p>Browse our products, add to cart and checkout securely via Peach Payments. For large orders or fitment queries, WhatsApp us on 063 500 1740.</p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "Can I collect in store?",
+            "answer": "<p>Yes — click & collect is free from 140 Modderfontein Road, Tembisa. Select \"Pickup\" at checkout.</p>"
+          }
+        },
+        "q-3": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer same-day fitment?",
+            "answer": "<p>Yes. WhatsApp us on 063 500 1740 to confirm availability and book your fitment slot.</p>"
+          }
+        },
+        "q-4": {
+          "type": "question",
+          "settings": {
+            "question": "What is your battery warranty?",
+            "answer": "<p>Osaka batteries carry a 6-month pro-rata warranty. Exide Eco batteries carry a 12-month pro-rata warranty. If your battery fails within the warranty period, bring it in — we calculate a fair refund based on months of actual use.</p>"
+          }
+        },
+        "q-5": {
+          "type": "question",
+          "settings": {
+            "question": "How does the trade-in credit work?",
+            "answer": "<p>When you buy a battery and bring your old one at collection, we credit you R250 (Osaka) or R475 (Exide) at the counter.</p>"
+          }
+        },
+        "q-6": {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship nationwide?",
+            "answer": "<p>Yes — we deliver nationwide across South Africa.<br>Batteries: R100 flat fee anywhere in SA.<br>Tyres: R100 per tyre nationwide.<br>Combos: R600 flat fee via Pudo nationwide.<br>Accessories & Oils: R100 flat fee on all orders.<br>Free click & collect available at our Tembisa store.<br>WhatsApp us on 063 500 1740 for delivery queries.</p>"
+          }
+        },
+        "q-7": {
+          "type": "question",
+          "settings": {
+            "question": "What payment methods do you accept?",
+            "answer": "<p>All major credit and debit cards via Peach Payments, EFT via Pay by Bank, Payflex buy-now-pay-later, and Scan to Pay. Cash on collection also accepted.</p>"
+          }
+        }
+      },
+      "block_order": ["q-1", "q-2", "q-3", "q-4", "q-5", "q-6", "q-7"]
+    }
+  },
+  "order": ["main", "faq"]
+}

@@ -1,0 +1,75 @@
+{%- style -%}
+  .bbt-page-reviews {
+    background: var(--bbt-black);
+    padding: 3rem 0 4rem;
+    text-align: center;
+  }
+
+  .bbt-page-reviews__body {
+    max-width: 60rem;
+    margin: 0 auto;
+    color: var(--bbt-cream);
+    font-size: 1.6rem;
+    line-height: 1.7;
+  }
+
+  .bbt-page-reviews__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.4rem;
+    max-width: 40rem;
+    margin: 3rem auto 0;
+  }
+
+  .bbt-page-reviews__button {
+    display: block;
+    padding: 1.4rem 1.6rem;
+    background: var(--bbt-gold);
+    color: var(--bbt-black);
+    font-weight: 700;
+    font-size: 1.6rem;
+    border-radius: var(--bbt-radius);
+    text-decoration: none;
+  }
+{%- endstyle -%}
+
+<div class="bbt-page-reviews page-width">
+  <div class="bbt-page-reviews__body rte">
+    {{ section.settings.body }}
+  </div>
+  <div class="bbt-page-reviews__actions">
+    <a href="{{ section.settings.google_review_link }}" class="bbt-page-reviews__button" target="_blank" rel="noopener">
+      Read our Google reviews →
+    </a>
+    <a href="{{ section.settings.google_review_link }}" class="bbt-page-reviews__button" target="_blank" rel="noopener">
+      Leave us a review →
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BBT Reviews Page",
+  "tag": "section",
+  "class": "section-bbt-page-reviews",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body content",
+      "default": "<p>We're proud of our 25+ five-star Google reviews. Read what our customers say and leave your own review.</p>"
+    },
+    {
+      "type": "url",
+      "id": "google_review_link",
+      "label": "Google review link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BBT Reviews Page"
+    }
+  ]
+}
+{% endschema %}
