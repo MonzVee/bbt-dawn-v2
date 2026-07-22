@@ -5,6 +5,34 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 
+{%- style -%}
+  #menu-drawer .menu-drawer__menu-item {
+    color: var(--bbt-cream);
+    font-weight: 600;
+  }
+
+  #menu-drawer .menu-drawer__menu-item:hover,
+  #menu-drawer .menu-drawer__menu-item--active {
+    color: var(--bbt-gold);
+  }
+
+  #menu-drawer .menu-drawer__navigation-container {
+    border-top: var(--bbt-border);
+  }
+
+  .bbt-menu-drawer-wa {
+    display: block;
+    margin: 1.6rem 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    background: var(--bbt-wa);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: var(--bbt-radius);
+    text-decoration: none;
+  }
+{%- endstyle -%}
+
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
@@ -29,7 +57,7 @@
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
-                        {{ link.title | escape }}
+                        {% render 'bbt-menu-emoji', url: link.url %}{{ link.title | escape }}
                         <span class="svg-wrapper">
                           {{- 'icon-arrow.svg' | inline_asset_content -}}
                         </span>
@@ -128,13 +156,16 @@
                         aria-current="page"
                       {% endif %}
                     >
-                      {{ link.title | escape }}
+                      {% render 'bbt-menu-emoji', url: link.url %}{{ link.title | escape }}
                     </a>
                   {%- endif -%}
                 </li>
               {%- endfor -%}
             </ul>
           </nav>
+          <a href="https://wa.me/27635001740" target="_blank" rel="noopener" class="bbt-menu-drawer-wa">
+            💬 WhatsApp us — 063 500 1740
+          </a>
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a

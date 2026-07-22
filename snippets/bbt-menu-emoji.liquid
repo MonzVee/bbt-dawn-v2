@@ -1,0 +1,37 @@
+{%- comment -%}
+  Outputs an emoji prefix (with trailing space) for a top-level nav link,
+  matched by URL/handle against BBT's known collections and pages.
+  Accepts:
+  - url: {String} the link's url (required)
+  Usage:
+  {% render 'bbt-menu-emoji', url: link.url %}{{ link.title | escape }}
+{%- endcomment -%}
+{%- liquid
+  assign emoji = ''
+  if url contains 'taxi-minibus'
+    assign emoji = '🚕 '
+  elsif url contains '7-seater'
+    assign emoji = '🚐 '
+  elsif url contains 'passenger-cars'
+    assign emoji = '🚗 '
+  elsif url contains 'workshop-trade'
+    assign emoji = '🔧 '
+  elsif url contains 'service-kits'
+    assign emoji = '🛠️ '
+  elsif url contains 'oils-fluids'
+    assign emoji = '🛢️ '
+  elsif url contains 'car-accessories'
+    assign emoji = '🎧 '
+  elsif url contains '/collections/all'
+    assign emoji = '🛒 '
+  elsif url contains '/pages/about'
+    assign emoji = 'ℹ️ '
+  elsif url contains '/pages/faq'
+    assign emoji = '❓ '
+  elsif url contains '/pages/reviews'
+    assign emoji = '⭐ '
+  elsif url contains '/pages/contact'
+    assign emoji = '📞 '
+  endif
+-%}
+{{- emoji -}}
