@@ -370,7 +370,7 @@ Morning pulse:
 "Give me today's BBT business pulse"
 
 Price update:
-"Update [product] price to R[amount] — confirme the details: 
+"Update [product] price to R[amount] — confirm the details: 
 [name, category, price, cost price, variants, tags]"
 
 Flash sale setup:
