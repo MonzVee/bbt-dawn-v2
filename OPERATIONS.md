@@ -1,185 +1,178 @@
 # BBT Operations Manual
-## Claude Code standing instructions for managing Better Battery Tyres
+## Standing instructions for Claude Code — Better Battery Tyres
 
-**Last updated:** July 2026
-**Store:** betterbattery.co.za
-**Owner:** Muneer Variawa
-**Contact:** 063 500 1740 | hello@betterbattery.co.za
+Last updated: July 2026
+Owner: Muneer Variawa
+Contact: 063 500 1740 | hello@betterbattery.co.za
 
 ---
 
 ## PRIME DIRECTIVE
 
-The goal of BBT is to maximise profit on every transaction
-while delivering genuine value to customers. Every pricing,
-marketing, and operational decision must serve this goal.
+Maximise profit on every transaction while delivering 
+genuine value to customers. Every pricing, marketing, 
+and operational decision serves this goal.
 
-Never sacrifice margin unnecessarily. Never discount
-where it isn't needed. Always look for ways to increase
-average order value.
+Never sacrifice margin unnecessarily.
+Never discount where it is not needed.
+Always look for ways to increase average order value.
+Always get Muneer's approval before any critical action.
 
 ---
 
-## 1. PRICING RULES
+## 1. GP FLOORS BY CATEGORY
 
-### GP floors by category (hard minimums — never go below)
+Hard minimums — never go below under any circumstances.
+Query Shopify for current prices, calculate GP from 
+Google Sheets cost prices before any price change.
 
 | Category | Minimum GP | Target GP |
 |----------|-----------|-----------|
 | Batteries | 25% | 28% |
 | Tyres | 25% | 30% |
 | Combos | 30% | 38% |
-| Oils & Fluids | 30% | 40% |
+| Oils and Fluids | 30% | 40% |
 | Service Kits | 35% | 45% |
 | Car Accessories | 40% | 55% |
-| LED Globes | 45% | 60% |
-
-### Pricing strategy
-- List prices HIGHER where market allows — accessories
-  and LEDs have no price anchor in customers minds.
-  Price confidently.
-- Use Spin & Win and flash sales as
-  the discount mechanism — never reduce list prices directly.
-  Free delivery is never offered on any category (see §10) —
-  use vouchers and flash sales instead.
-- Batteries and tyres have known market prices —
-  price competitively but never below GP floor.
-- Always check Takealot and AutoZone before setting
-  accessory prices — match or beat while hitting GP target.
-
-### Never discount these products — ever
-- Osaka Car Battery (any variant)
-- Exide Eco Car Battery (any variant)
-- Any future battery brand added to the catalogue
-- Reason: batteries are lowest margin category.
-  Trade-in credit is the only mechanic that applies
-  and that is not a discount — it is a credit for
-  value received (old battery traded in).
-
-### Compare-at pricing rules
-- All non-battery products: compare-at at 15-20% above
-  selling price to show savings
-- Batteries: no compare-at price ever
-- Combos: compare-at reflects genuine market value of
-  components purchased separately
+| LED and Lighting | 45% | 60% |
 
 ---
 
-## 2. WEEKLY BROADCAST SCHEDULE
+## 2. PRICING STRATEGY
 
-### Friday flash sale campaign (3-message sequence)
+### List high, discount smart
+- Accessories and LEDs have no customer price anchor
+  List at confident margins, use Spin & Win and flash 
+  sales to create perceived savings
+- Batteries and tyres have known market prices
+  Price competitively, never below GP floor
+- Combos: maximise margin, include fitment value
 
-**Message 1 — Friday 15:30**
-Launch the weekly flash sale. Feature one hero product
-with a genuine saving. Send to all 8,000 contacts.
-Format: product + price + saving + link + WhatsApp CTA
-+ deadline (Sunday 17:30)
+### Never discount these products
+- Batteries — any brand, any variant, any circumstance
+- Any product where sale price would breach GP floor
 
-**Message 2 — Saturday 09:00**
-Follow-up to same list.
-Shorter — "Last chance" angle.
-Same product or a second flash deal.
+### Price change process
+1. Update Google Sheets master price list first
+2. Ask Claude Code to sync prices to Shopify
+3. Claude Code checks GP floor before applying
+4. Muneer approves before any live price change
+5. Google Sheets is always the single source of truth
 
-**Message 3 — Sunday 17:30**
-Close the sale. "Ends tonight" urgency.
-3 lines maximum + link.
+---
+
+## 3. WEEKLY BROADCAST SCHEDULE
+
+### Flash sale campaign — 3 message sequence
+
+Message 1 — Friday 15:30 (launch):
+- Feature one hero product (accessories preferred)
+- Lead with price and saving
+- Include product link and WhatsApp number
+- Deadline: Sunday 17:30
+
+Message 2 — Saturday 09:00 (follow-up):
+- Same list or non-openers
+- Shorter — last chance angle
+- Reference Sunday deadline
+
+Message 3 — Sunday 17:30 (close):
+- Maximum 3 lines
+- Ends tonight urgency
+- Link only
 
 ### Flash sale product selection rules
 1. High margin product — accessories preferred
-2. In stock with sufficient quantity
+2. Confirmed in stock
 3. Never a battery product
-4. Rotate categories weekly
-5. Ideally has TikTok content already created
+4. Not featured in last 2 broadcasts
+5. Rotate categories weekly
 
-### How to run a flash sale (no code needed)
+### How to run a flash sale
 1. Shopify Admin → Products → find product
 2. Add tag: flash-sale
 3. Set compare-at = original price
 4. Set selling price = sale price
-5. Homepage updates automatically
-6. Remove flash-sale tag Sunday 17:30 to end sale
+5. Confirm GP floor maintained
+6. Homepage flash sale section updates automatically
+7. Remove flash-sale tag Sunday 17:30 to end sale
+
+All broadcast copy must be approved by Muneer 
+before sending.
 
 ---
 
-## 3. GAMIFICATION RULES
+## 4. GAMIFICATION RULES
 
 ### Spin & Win prize pool
 - R50 voucher: 40% probability
 - 10% off accessories: 35% probability
-- R100 delivery-fee voucher (accessories/oils only): 20% probability
-- R200 grand prize voucher: 5% probability
+- R100 delivery fee voucher (accessories/oils): 20%
+- R200 grand prize: 5%
 - Never give battery discounts as prizes
-- Never give free delivery as a prize on any category —
-  the R100 delivery-fee voucher above is a discount code,
-  not a shipping profile change
-- Delivery-fee voucher prizes apply to accessories and oils
-  ONLY, not batteries, tyres, or combos
 - Voucher codes: single use, 7-day expiry
 
-### Loyalty tiers — calibrated to BBT customer spend
-
+### Loyalty tiers
 | Tier | Points | How earned |
 |------|--------|-----------|
-| Bronze | 0 - 4,999 | Single accessory or oil purchase |
-| Silver | 5,000 - 19,999 | Battery plus tyre purchase |
-| Gold | 20,000+ | Multiple orders — genuine loyal customer |
+| Bronze | 0-4,999 | Single purchase |
+| Silver | 5,000-19,999 | Multiple purchases |
+| Gold | 20,000+ | Loyal repeat customer |
 
-Points earning: 5 points per R1 spent
+Points: 5 per R1 spent
 
-### Gold tier benefits (no free delivery — margins cannot support it)
-- 24hr early access to flash sales before general broadcast
-- Birthday voucher: R100 off accessories only
-- Priority WhatsApp response — jump the queue
-- 5% loyalty discount on accessories only
-  (never applies to batteries, tyres, or combos)
+### Gold tier benefits
+- 24hr early flash sale access
+- Birthday voucher on accessories only
+- Priority WhatsApp response
+- No free delivery — margins cannot support it
 
 ### Pricing for gamification
-- List accessories 15-20% above target sell price
-- Spin & Win and loyalty discounts bring to target price
-- Customer feels they won — BBT hits margin target
-- Never apply inflated pricing to batteries or tyres
-  (customers know these prices)
+- List accessories above target sell price
+- Spin & Win and loyalty discounts bring to target
+- Customer wins — BBT hits margin target
+- Never inflate battery or tyre prices for this mechanic
 
 ---
 
-## 4. DAILY OPERATIONS
+## 5. DAILY OPERATIONS
 
 ### Morning pulse (run every weekday)
 Ask Claude Code:
 "Give me today's BBT business pulse"
 
-Returns: overnight orders, revenue vs yesterday,
-stock alerts, unfulfilled orders, WhatsApp lead count
-
-### Price sync (run when costs change)
-Ask Claude Code:
-"Sync prices from Google Sheet to Shopify"
+Returns:
+- Orders last 24 hours (count and revenue)
+- Revenue vs same day last week
+- Stock alerts (anything below threshold)
+- Unfulfilled orders (flag any over 24 hours)
+- Top 3 action items for today
 
 ### Order management
-Ask Claude Code:
 "Show me all unfulfilled orders"
 "Mark order #[X] as fulfilled — customer collected"
+"Which orders this week need delivery booking?"
 
-### Inventory alerts
-Ask Claude Code:
-"Which products are running low — reorder alert"
+### Stock alerts
+"Check stock levels — flag anything needing reorder"
+"Which products have zero inventory?"
 
 ---
 
-## 5. CONTENT CALENDAR
+## 6. CONTENT CALENDAR
 
-### Weekly content minimum
+### Weekly minimum
 - 3 x TikTok videos
 - 1 x WhatsApp broadcast (Friday 15:30)
 - 2 x Instagram posts
 - 1 x Facebook post
 
-### TikTok content priorities
-1. Combo fitment before/after — highest engagement
+### TikTok content priorities (by engagement)
+1. Combo fitment before/after
 2. Battery replacement — fast and professional
-3. Accessory installs — dash cam, LED globes
-4. Price reveals — "How much for a Quantum combo?"
-5. Customer testimonials filmed at fitment
+3. Accessory install (dash cam, LED globes)
+4. Price reveal — "How much for a Quantum combo?"
+5. Customer testimonial at fitment
 
 ### Content requests to Claude Code
 "Write a TikTok script for [product] — 30 seconds"
@@ -187,70 +180,74 @@ Ask Claude Code:
 "Write 3 caption options for [product] photo"
 "Plan next week's content calendar"
 
+All content requires Muneer approval before posting.
+
 ---
 
-## 6. B2B WORKSHOP TRADE
+## 7. WORKSHOP TRADE (B2B)
 
-### Policy — strictly COD, no exceptions
-- Best prices in the market for workshops and mechanics
-- Cash on delivery — payment before fitment or delivery
-- No credit accounts offered to any customer ever
-- No invoicing, no 30-day terms, no exceptions
-- Reason: eliminates bad debt risk and cash flow pressure
+### Current policy — strictly COD
+- Best market prices for workshops and mechanics
+- Cash on delivery — no exceptions
+- No credit accounts offered to anyone ever
+- No formal discount structure
+- Payment before fitment or delivery every time
 
-### Target B2B customers
+### Future B2B features (requires Muneer approval)
+- Purchase history loyalty pricing after trading data 
+  is available (several months post-launch)
+- WhatsApp enquiry flow for bulk pricing discussions
+- Online trade application form to capture business 
+  details (name, contact, address, products needed)
+- None of these are live at launch
+
+### B2B target customers
 - Independent mechanics in Tembisa and Midrand
 - Panel beaters needing batteries
-- Taxi associations — fleet battery and tyre contracts
+- Taxi associations — fleet contracts
 - Uber/Bolt driver groups — bulk tyre and combo deals
 
-### B2B pricing
-- Best market prices
-- Bulk order savings passed on where margin allows
-- Never below GP floor on any product
-- No formal discount structure — negotiate per order
-
 ### B2B operations
-Ask Claude Code:
 "Show me all workshop prospects not yet contacted"
 "Write a WhatsApp intro for [workshop] in [area]"
 "Which B2B customers ordered this month?"
-"Calculate monthly oil drum revenue from workshops"
 
 ---
 
-## 7. SUPPLIER MANAGEMENT
+## 8. SUPPLIER MANAGEMENT
 
-### Current suppliers
-- Batteries: Osaka (value tier), Exide (premium tier)
-- Tyres: Import WSW/BSW, LMC/Linglong, Hockenheim
-- Oils: Shell (confirmed), Liqui-Moly (incoming)
-- Accessories: various import suppliers
-
-### Incoming product ranges
-- Liqui-Moly engine oil full range
-- Willard batteries (24-month warranty)
-- Sabat batteries (24-month warranty)
-- AGM batteries (start-stop vehicles — Exide 668 pending)
+### Architecture rule
+Suppliers and brands are interchangeable.
+Never lock business rules or theme code to a specific 
+brand. When a supplier changes or a better deal arrives, 
+only Shopify product data changes — not CLAUDE.md, 
+not theme code.
 
 ### Price change process
-1. Update Google Sheets master price list
-2. Ask Claude Code: "Sync prices from Google Sheet"
-3. Claude Code updates Shopify automatically
-4. Never edit prices manually in Shopify admin
-5. Google Sheets is always the single source of truth
+1. Supplier sends new pricing
+2. Update Google Sheets master price list
+3. Claude Code reads Sheets, calculates new selling 
+   prices at target GP
+4. Muneer approves new prices
+5. Claude Code syncs to Shopify
+
+### Incoming ranges (add when confirmed in stock)
+- Premium oil brands (various)
+- Additional battery brands and tiers
+- Extended accessory catalogue (top 150 SA online SKUs)
+- OEM genuine parts (East Vaal Motors — future)
 
 ---
 
-## 8. PERFORMANCE TARGETS
+## 9. PERFORMANCE TARGETS
 
-### Monthly revenue targets
-- Current baseline: ~R250,000/month in-store
-- Month 3: R350,000 (store + online combined)
-- Month 6: R500,000 (omni-channel)
-- Month 12: R750,000+ (with marketplaces)
+### Revenue targets
+- Launch baseline: R250,000/month in-store
+- Month 3: R350,000 combined (store + online)
+- Month 6: R500,000 omni-channel
+- Month 12: R750,000+ with marketplaces
 
-### Key metrics tracked weekly
+### Weekly metrics to track
 - Total revenue all channels
 - Online revenue as % of total
 - Average order value
@@ -260,61 +257,110 @@ Ask Claude Code:
 - New vs returning customers
 
 ### Weekly report
-Ask Claude Code every Monday morning:
+Ask Claude Code every Monday:
 "Give me last week's BBT performance report"
 
 ---
 
-## 9. CHANNEL EXPANSION ROADMAP
+## 10. CHANNEL EXPANSION ROADMAP
 
-### Now (Month 1-2)
-- Shopify store live ← current focus
-- WhatsApp broadcast optimised
-- TikTok content consistent
+### Live at launch
+- Shopify (betterbattery.co.za)
+- WhatsApp broadcast (manual, 8,000 contacts)
+- Google Business Profile
+- TikTok, Instagram, Facebook (organic)
+
+### Month 1-2
+- WhatsApp automation (Ntombi / Meta Business Agent)
+- ManyChat (new number for CTWA ad traffic)
+- Dondy abandoned cart WhatsApp recovery
+- Top 150 automotive SKU research and catalogue build
+- Google Shopping activation
 
 ### Month 2-3
-- Takealot seller account approved
-- First Takealot listings live
-- ManyChat new number setup for CTWA leads
+- Takealot seller account and first listings
+- Accessories catalogue on Takealot first
 
 ### Month 3-4
-- Makro marketplace onboarded
-- Wherehouse considered for multi-channel management
-- B2B workshop trade customers active
+- Makro marketplace onboarding
+- Wherehouse multi-channel dashboard 
+  (review when managing 3+ channels)
 
 ### Month 6+
-- Amazon SA when available
+- Amazon SA
+- Investor partnership — three-tier strategy
+  (budget / mid / premium across all categories)
+- East Vaal Motors — OEM genuine parts channel
 - Wholesale to other fitment centres
-- Own brand accessories consideration
 
 ---
 
-## 10. ESCALATION RULES
+## 11. ESCALATION RULES
 
-### Current shipping policy (updated for launch — see CLAUDE.md §5 for the full profile table)
-- Batteries: R100 flat fee, local and nationwide
-- Tyres: R100 per tyre, local and nationwide
-- Combos: R600 flat fee via Pudo, nationwide
-- Accessories & Oils: R100 flat fee on ALL orders, no threshold
-- Free delivery does not exist on any category — click &
-  collect remains free everywhere
-- This is the confirmed policy as of launch. Any further
-  change to these rates or profiles still requires asking
-  first, per the rule below.
+### Always requires Muneer approval
+- Any price change on any product
+- Any discount or promotion creation
+- Any new product added to live catalogue
+- Any WhatsApp broadcast before sending
+- Any theme change published to live store
+- Any refund over R500
+- Any shipping profile or rate change
+- Any B2B pricing or discount decision
+- Any new channel or marketplace activation
 
-### Claude Code must always ask before:
-- Changing any price below GP floor
-- Creating any battery discount of any kind
-- Any order over R5,000 — flag for manual review
-- Any refund request over R500
-- Sending any broadcast — Muneer must approve copy
+### Claude Code may act without approval
+- Read-only queries (orders, stock, revenue)
+- Writing draft content for Muneer's review
+- Running shopify theme check
+- Committing to git (not pushing to live store)
+- Analysis and reporting
+- Suggesting actions for Muneer to approve
 
-### Claude Code must never:
-- Discount batteries under any circumstances ever
-- Offer free delivery as a prize, loyalty benefit, or
-  promotion on any category
-- Change shipping profiles without confirmation
-- Delete any products or collections
-- Publish theme changes without Muneer approval
-- Offer credit accounts or payment terms to anyone
+---
 
+## 12. BBT_PROMPTS LIBRARY
+
+Reusable operational prompts stored in /BBT_PROMPTS/:
+
+| File | Use when |
+|------|---------|
+| daily-pulse.md | Every weekday morning |
+| weekly-report.md | Every Monday |
+| friday-flash-sale.md | Every Friday by 14:00 |
+| add-new-product.md | Adding any new product |
+| price-sync.md | When cost prices change |
+| broadcast-writer.md | Writing any WhatsApp broadcast |
+| tiktok-script.md | Writing any TikTok script |
+| reorder-alert.md | Weekly stock check |
+
+Run any prompt by opening Claude Code and saying:
+"Run the [prompt name] prompt"
+
+---
+
+## 13. GOOGLE BUSINESS PROFILE
+
+URL: g.page/r/CURQ3dL5N-RjEBM/review
+Review link: g.page/r/CURQ3dL5N-RjEBM/review
+
+### Weekly GMB tasks
+- Respond to any new reviews within 24 hours
+- Post one update per week (product, fitment photo, offer)
+- Update hours if they change
+- Add new product photos regularly
+
+### Review request sequence
+After every collection or fitment — Ntombi or staff 
+sends WhatsApp:
+"Hi [name], thanks for choosing BBT! 
+If you're happy with our service, a quick Google review 
+would mean the world to us: [review link]"
+
+Never ask for a specific star rating — against Google policy.
+
+---
+
+IMPORTANT: This file contains operating procedures only.
+No product data, no prices, no hardcoded counts.
+All live data comes from Shopify or Google Sheets.
+All critical actions require Muneer's approval.
